@@ -10,7 +10,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>NovaNews</title>
+    <title>Categorías - NovaNews</title>
 
     <link rel="stylesheet" href="css/output.css">
 
@@ -25,10 +25,16 @@
     <header class="bg-blue-600 text-white shadow-sm">
 
         <nav
-            class="max-w-6xl mx-auto px-5 py-3 flex items-center justify-between"
+            class="
+                max-w-6xl
+                mx-auto
+                px-5
+                py-3
+                flex
+                items-center
+                justify-between
+            "
         >
-
-            <!-- LOGO -->
 
             <a
                 href="index.html"
@@ -37,21 +43,20 @@
                 📰 NovaNews
             </a>
 
-
             <!-- MENU -->
 
             <div class="flex items-center gap-2 text-xs">
 
                 <a
                     href="index.html"
-                    class="bg-blue-700 px-3 py-2 rounded hover:bg-blue-800 transition"
+                    class="px-3 py-2 rounded hover:bg-blue-700 transition"
                 >
                     Inicio
                 </a>
 
                 <a
                     href="categorias.html"
-                    class="px-3 py-2 rounded hover:bg-blue-700 transition"
+                    class="bg-blue-700 px-3 py-2 rounded"
                 >
                     Categorías
                 </a>
@@ -77,72 +82,39 @@
     </header>
 
 
-    <!-- HERO -->
-
-    <section
-        class="bg-blue-600 text-white"
-    >
-
-        <div
-            class="max-w-6xl mx-auto px-6 py-10 text-center"
-        >
-
-            <h1
-                class="text-3xl md:text-4xl font-bold mb-4"
-            >
-                Bienvenido a
-                <span class="text-yellow-300">
-                    NovaNews
-                </span>
-            </h1>
-
-
-            <p
-                class="max-w-xl mx-auto text-sm leading-relaxed text-blue-100 mb-6"
-            >
-                Descubre las noticias más recientes sobre
-                tecnología, ciencia, turismo e innovación.
-            </p>
-
-
-            <a
-                href="#noticias"
-                class="
-                    inline-block
-                    bg-yellow-400
-                    text-gray-900
-                    text-xs
-                    font-semibold
-                    px-5
-                    py-2.5
-                    rounded
-                    hover:bg-yellow-300
-                    transition
-                "
-            >
-                Ver Noticias
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- NOTICIAS -->
+    <!-- CONTENIDO -->
 
     <main
-        id="noticias"
-        class="max-w-6xl mx-auto px-6 py-8"
+        class="
+            max-w-4xl
+            mx-auto
+            px-6
+            py-8
+        "
     >
 
-        <section>
+        <a
+            href="index.html"
+            class="
+                inline-block
+                text-xs
+                text-blue-600
+                hover:text-blue-800
+                mb-5
+            "
+        >
+            ← Volver a Inicio
+        </a>
+
+
+      <section>
 
             <div class="mb-5">
 
                 <h2
                     class="text-lg font-bold text-gray-800"
                 >
-                    Noticias Destacadas
+                    Categorías
                 </h2>
 
                 <div
@@ -155,7 +127,7 @@
             <!-- CARDS -->
 
             <div
-                id="contenedor-noticias"
+                id="contenedor-categorias"
                 class="
                     grid
                     grid-cols-1
@@ -165,7 +137,7 @@
                 "
             >
 
-                <!-- JavaScript cargará las noticias -->
+                <!-- JavaScript cargará las categorias -->
 
             </div>
 
@@ -173,8 +145,7 @@
 
     </main>
 
-
-    <!-- FOOTER -->
+<!-- FOOTER -->
 
     <footer
         class="bg-gray-900 text-gray-300 mt-8"
@@ -295,8 +266,8 @@
         </div>
 
     </footer>
-    
-    <script src="js/app.js"></script>
+
+    <script src="js/categoria.js"></script>
 
 </body>
 

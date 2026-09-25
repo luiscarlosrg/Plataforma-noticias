@@ -2,6 +2,7 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -9,38 +10,94 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Mis favoritos</title>
+    <title>Mis Favoritos - NovaNews</title>
 
     <link rel="stylesheet" href="css/output.css">
+
 </head>
 
-<body class="bg-gray-100">
 
-    <header class="bg-blue-700 text-white shadow-md">
+<body class="bg-gray-100 text-gray-800">
 
-        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+    <!-- HEADER -->
+
+    <header class="bg-blue-600 text-white shadow-sm">
+
+        <nav
+            class="
+                max-w-6xl
+                mx-auto
+                px-5
+                py-3
+                flex
+                items-center
+                justify-between
+            "
+        >
 
             <a
                 href="index.html"
-                class="text-2xl font-bold"
+                class="font-bold text-lg"
             >
-                📰 Noticias
+                📰 NovaNews
             </a>
 
-            <div class="flex gap-6">
+
+            <div class="flex items-center gap-2 text-xs">
 
                 <a
                     href="index.html"
-                    class="hover:text-blue-200"
+                    class="
+                        px-3
+                        py-2
+                        rounded
+                        hover:bg-blue-700
+                        transition
+                    "
                 >
                     Inicio
                 </a>
 
+
+                <a
+                    href="categorias.html"
+                    class="
+                        px-3
+                        py-2
+                        rounded
+                        hover:bg-blue-700
+                        transition
+                    "
+                >
+                    Categorías
+                </a>
+
+
                 <a
                     href="favoritos.html"
-                    class="hover:text-blue-200"
+                    class="
+                        bg-blue-700
+                        px-3
+                        py-2
+                        rounded
+                    "
                 >
                     Favoritos
+                </a>
+
+
+                <a
+                    href="index.html#contacto"
+                    class="
+                        px-3
+                        py-2
+                        rounded
+                        hover:bg-blue-700
+                        transition
+                    "
+                >
+                    Contacto
                 </a>
 
             </div>
@@ -50,22 +107,154 @@
     </header>
 
 
-    <main class="max-w-7xl mx-auto px-6 py-12">
+    <!-- CONTENIDO -->
 
-        <h1 class="text-4xl font-bold text-gray-800 mb-8">
-            ⭐ Mis favoritos
-        </h1>
+    <main
+        class="max-w-6xl mx-auto px-6 py-8 min-h-[500px]"
+    >
 
-        <div
-            id="contenedor-favoritos"
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-        </div>
+        <section>
+
+            <div class="mb-5">
+
+                <h1
+                    class="text-lg font-bold text-gray-800"
+                >
+                    Mis Favoritos
+                </h1>
+
+                <div
+                    class="w-10 h-0.5 bg-blue-600 mt-2"
+                ></div>
+
+                <p
+                    class="text-xs text-gray-500 mt-2"
+                >
+                    Noticias que has guardado.
+                </p>
+
+            </div>
+
+
+            <!-- CARDS -->
+
+            <div
+                id="contenedor-favoritos"
+                class="
+                    grid
+                    grid-cols-1
+                    sm:grid-cols-2
+                    lg:grid-cols-3
+                    gap-4
+                "
+            >
+            </div>
+
+        </section>
 
     </main>
 
 
-    <script type="module" src="js/favoritos.js"></script>
+    <!-- FOOTER -->
+
+    <footer
+        class="bg-gray-900 text-gray-300"
+    >
+
+        <div
+            class="
+                max-w-6xl
+                mx-auto
+                px-6
+                py-8
+                grid
+                grid-cols-1
+                md:grid-cols-4
+                gap-6
+            "
+        >
+
+            <div>
+
+                <h3
+                    class="text-white font-bold mb-2"
+                >
+                    📰 NovaNews
+                </h3>
+
+                <p class="text-xs">
+                    Tu portal de noticias actualizado.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3
+                    class="text-white font-bold mb-2"
+                >
+                    Secciones
+                </h3>
+
+                <p class="text-xs">Tecnología</p>
+                <p class="text-xs">Turismo</p>
+                <p class="text-xs">Ciencia</p>
+
+            </div>
+
+
+            <div>
+
+                <h3
+                    class="text-white font-bold mb-2"
+                >
+                    Contacto
+                </h3>
+
+                <p class="text-xs">
+                    contacto@novanews.com
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3
+                    class="text-white font-bold mb-2"
+                >
+                    Redes sociales
+                </h3>
+
+                <p class="text-xs">
+                    Twitter · Facebook · Instagram
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="
+                border-t
+                border-gray-800
+                text-center
+                py-4
+            "
+        >
+
+            <p class="text-xs text-gray-500">
+                © 2026 NovaNews - Plataforma de Noticias
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/favoritos.js"></script>
 
 </body>
 

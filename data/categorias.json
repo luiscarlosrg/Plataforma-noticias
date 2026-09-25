@@ -1,0 +1,26 @@
+[
+        {
+            "id": 1,
+            "titulo": "Tecnología",
+            "descripcion": "Tecnología",
+            "imagen": "https://images.unsplash.com/photo-1509062522246-3755977927d7"
+        },
+        {
+            "id": 2,
+            "titulo": "Turismo",
+            "descripcion": "Turismo",
+            "imagen": "https://images.unsplash.com/photo-1509062522246-3755977927d7"
+        },
+        {
+            "id": 3,
+            "titulo": "Ciencia",
+            "descripcion": "Ciencia",
+            "imagen": "https://images.unsplash.com/photo-1509062522246-3755977927d7"
+        },
+        {
+            "id": 4,
+            "titulo": "Inovación",
+            "descripcion": "Inovación",
+            "imagen": "https://images.unsplash.com/photo-1509062522246-3755977927d7"
+        }
+    ]

@@ -3,18 +3,28 @@
         "id": 1,
         "titulo": "La tecnología transforma la educación",
         "descripcion": "Nuevas herramientas digitales están cambiando la manera de aprender.",
-        "imagen": "https://images.unsplash.com/photo-1509062522246-3755977927d7"
+        "imagen": "https://images.unsplash.com/photo-1509062522246-3755977927d7",
+        "categoria": "Tecnología"
     },
     {
         "id": 2,
         "titulo": "Nuevos destinos turísticos",
         "descripcion": "Descubre lugares increíbles y nuevas experiencias para tus próximas vacaciones.",
-        "imagen": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+        "imagen": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+         "categoria": "Turismo"
     },
     {
         "id": 3,
         "titulo": "Innovación y tecnología",
         "descripcion": "Las nuevas tecnologías continúan transformando nuestra vida cotidiana.",
-        "imagen": "https://images.unsplash.com/photo-1518770660439-4636190af475"
+        "imagen": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+         "categoria": "Ciencia"
+    },
+    {
+        "id": 4,
+        "titulo": "Innovación",
+        "descripcion": "Las nuevas tecnologías continúan transformando nuestra vida cotidiana.",
+        "imagen": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+         "categoria": "Inovación"
     }
 ]

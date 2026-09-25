@@ -2,33 +2,73 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <title>Detalle de noticia</title>
+    <title>Detalle - NovaNews</title>
 
     <link rel="stylesheet" href="css/output.css">
+
 </head>
 
-<body class="bg-gray-100">
 
-    <header class="bg-blue-700 text-white shadow-md">
+<body class="bg-gray-100 text-gray-800">
 
-        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-            <a href="index.html" class="text-2xl font-bold">
-                📰 Noticias
+    <!-- HEADER -->
+
+    <header class="bg-blue-600 text-white shadow-sm">
+
+        <nav
+            class="
+                max-w-6xl
+                mx-auto
+                px-5
+                py-3
+                flex
+                items-center
+                justify-between
+            "
+        >
+
+            <a
+                href="index.html"
+                class="font-bold text-lg"
+            >
+                📰 NovaNews
             </a>
 
-            <div class="flex gap-6">
 
-                <a href="index.html" class="hover:text-blue-200">
+            <div class="flex gap-2 text-xs">
+
+                <a
+                    href="index.html"
+                    class="
+                        px-3
+                        py-2
+                        rounded
+                        hover:bg-blue-700
+                    "
+                >
                     Inicio
                 </a>
 
-                <a href="index.html" class="hover:text-blue-200">
-                    Noticias
+
+                <a
+                    href="favoritos.html"
+                    class="
+                        px-3
+                        py-2
+                        rounded
+                        hover:bg-blue-700
+                    "
+                >
+                    Favoritos
                 </a>
 
             </div>
@@ -38,11 +78,26 @@
     </header>
 
 
-    <main class="max-w-4xl mx-auto px-6 py-12">
+    <!-- CONTENIDO -->
+
+    <main
+        class="
+            max-w-4xl
+            mx-auto
+            px-6
+            py-8
+        "
+    >
 
         <a
             href="index.html"
-            class="inline-block mb-6 text-blue-600 hover:text-blue-800"
+            class="
+                inline-block
+                text-xs
+                text-blue-600
+                hover:text-blue-800
+                mb-5
+            "
         >
             ← Volver a noticias
         </a>
@@ -50,12 +105,49 @@
 
         <article
             id="detalle-noticia"
-            class="bg-white rounded-2xl shadow-md overflow-hidden"
+            class="
+                bg-white
+                border
+                border-gray-200
+                rounded-md
+                shadow-sm
+                overflow-hidden
+            "
         >
-            <!-- JavaScript cargará la noticia aquí -->
+            <!-- JavaScript cargará la noticia -->
+
         </article>
 
     </main>
+
+
+    <!-- FOOTER -->
+
+    <footer
+        class="
+            bg-gray-900
+            text-gray-300
+            mt-8
+        "
+    >
+
+        <div
+            class="
+                max-w-6xl
+                mx-auto
+                px-6
+                py-6
+                text-center
+            "
+        >
+
+            <p class="text-xs">
+                © 2026 NovaNews - Plataforma de Noticias
+            </p>
+
+        </div>
+
+    </footer>
 
 
     <script src="js/detalle.js"></script>
