@@ -26,5 +26,11 @@
         "descripcion": "Las nuevas tecnologías continúan transformando nuestra vida cotidiana.",
         "imagen": "https://images.unsplash.com/photo-1518770660439-4636190af475",
          "categoria": "Inovación"
+    },{
+        "id": 5,
+        "titulo": "La tecnología transforma la educación",
+        "descripcion": "Nuevas herramientas digitales están cambiando la manera de aprender.",
+        "imagen": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+        "categoria": "Tecnología"
     }
 ]

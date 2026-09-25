@@ -13,6 +13,7 @@
     <title>Mis Favoritos - NovaNews</title>
 
     <link rel="stylesheet" href="css/output.css">
+    <link rel="icon" type="image/x-icon" href="/image/noticias.png">
 
 </head>
 
@@ -158,7 +159,7 @@
     <!-- FOOTER -->
 
     <footer
-        class="bg-gray-900 text-gray-300"
+        class="bg-gray-900 text-gray-300 mt-8"
     >
 
         <div
@@ -182,8 +183,10 @@
                     📰 NovaNews
                 </h3>
 
-                <p class="text-xs">
+                <p class="text-xs leading-relaxed">
                     Tu portal de noticias actualizado.
+                    Información sobre tecnología,
+                    ciencia, turismo e innovación.
                 </p>
 
             </div>
@@ -197,14 +200,19 @@
                     Secciones
                 </h3>
 
-                <p class="text-xs">Tecnología</p>
-                <p class="text-xs">Turismo</p>
-                <p class="text-xs">Ciencia</p>
+                <ul class="text-xs space-y-1">
+
+                    <li>Tecnología</li>
+                    <li>Turismo</li>
+                    <li>Ciencia</li>
+                    <li>Innovación</li>
+
+                </ul>
 
             </div>
 
 
-            <div>
+            <div id="contacto">
 
                 <h3
                     class="text-white font-bold mb-2"
@@ -212,9 +220,13 @@
                     Contacto
                 </h3>
 
-                <p class="text-xs">
-                    contacto@novanews.com
-                </p>
+                <ul class="text-xs space-y-1">
+
+                    <li>📧 contacto@novanews.com</li>
+                    <li>📞 +57 300 123 4567</li>
+                    <li>📍 Colombia</li>
+
+                </ul>
 
             </div>
 
@@ -227,9 +239,27 @@
                     Redes sociales
                 </h3>
 
-                <p class="text-xs">
-                    Twitter · Facebook · Instagram
-                </p>
+                <div class="flex gap-2">
+
+                    <span
+                        class="bg-gray-800 px-2 py-1 text-xs rounded"
+                    >
+                        Twitter
+                    </span>
+
+                    <span
+                        class="bg-gray-800 px-2 py-1 text-xs rounded"
+                    >
+                        Facebook
+                    </span>
+
+                    <span
+                        class="bg-gray-800 px-2 py-1 text-xs rounded"
+                    >
+                        Instagram
+                    </span>
+
+                </div>
 
             </div>
 
@@ -237,12 +267,7 @@
 
 
         <div
-            class="
-                border-t
-                border-gray-800
-                text-center
-                py-4
-            "
+            class="border-t border-gray-800 text-center py-4"
         >
 
             <p class="text-xs text-gray-500">

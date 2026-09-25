@@ -73,7 +73,7 @@ function crearTarjeta(categoria) {
             >
 
                 <a
-                    href="detalle.html?id=${categoria.id}"
+                    href="filtro.html?categoria=${categoria.titulo}"
                     class="
                         bg-blue-600
                         text-white
@@ -140,7 +140,7 @@ fetch('data/categorias.json')
         );
 
 
-        contenedorNoticias.innerHTML = `
+        contenedorCategorias.innerHTML = `
 
             <div
                 class="

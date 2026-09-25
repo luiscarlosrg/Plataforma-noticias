@@ -165,7 +165,7 @@ fetch('data/noticias.json')
                 <div class="flex gap-3">
 
                     <a
-                        href="index.html"
+                        href="filtro.html?categoria=${noticia.categoria}"
                         class="
                             bg-blue-600
                             text-white
@@ -177,7 +177,7 @@ fetch('data/noticias.json')
                             transition
                         "
                     >
-                        Volver
+                        Ver más noticias de ${noticia.categoria}
                     </a>
 
                 </div>
