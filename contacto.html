@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Contacto - NovaNews</title>
+
+    <link rel="stylesheet" href="css/output.css">
+
+</head>
+
+
+<body class="bg-gray-100 text-gray-800">
+
+
+    <!-- HEADER -->
+    <header-component></header-component>
+
+
+    <!-- CONTENIDO -->
+
+    <main
+        class="
+            max-w-3xl
+            mx-auto
+            px-6
+            py-10
+        "
+    >
+
+        <!-- TITULO -->
+
+        <section class="mb-6">
+
+            <h1
+                class="
+                    text-2xl
+                    font-bold
+                    text-gray-800
+                "
+            >
+                Contacto
+            </h1>
+
+            <div
+                class="w-10 h-0.5 bg-blue-600 mt-2"
+            ></div>
+
+            <p
+                class="
+                    text-sm
+                    text-gray-500
+                    mt-3
+                "
+            >
+                ¿Tienes alguna pregunta o comentario?
+                Escríbenos y nos pondremos en contacto contigo.
+            </p>
+
+        </section>
+
+
+        <!-- FORMULARIO -->
+
+        <section
+            class="
+                bg-white
+                border
+                border-gray-200
+                rounded-md
+                shadow-sm
+                p-6
+            "
+        >
+
+            <form
+                id="formulario-contacto"
+                novalidate
+            >
+
+                <!-- NOMBRE -->
+
+                <div class="mb-5">
+
+                    <label
+                        for="nombre"
+                        class="
+                            block
+                            text-sm
+                            font-semibold
+                            text-gray-700
+                            mb-2
+                        "
+                    >
+                        Nombre
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        placeholder="Escribe tu nombre"
+                        class="
+                            w-full
+                            border
+                            border-gray-300
+                            rounded
+                            px-3
+                            py-2
+                            text-sm
+                            outline-none
+                            focus:ring-2
+                            focus:ring-blue-500
+                            focus:border-blue-500
+                        "
+                    >
+
+                    <p
+                        id="error-nombre"
+                        class="
+                            text-red-500
+                            text-xs
+                            mt-1
+                        "
+                    ></p>
+
+                </div>
+
+
+                <!-- CORREO -->
+
+                <div class="mb-5">
+
+                    <label
+                        for="correo"
+                        class="
+                            block
+                            text-sm
+                            font-semibold
+                            text-gray-700
+                            mb-2
+                        "
+                    >
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="correo"
+                        name="correo"
+                        placeholder="ejemplo@correo.com"
+                        class="
+                            w-full
+                            border
+                            border-gray-300
+                            rounded
+                            px-3
+                            py-2
+                            text-sm
+                            outline-none
+                            focus:ring-2
+                            focus:ring-blue-500
+                            focus:border-blue-500
+                        "
+                    >
+
+                    <p
+                        id="error-correo"
+                        class="
+                            text-red-500
+                            text-xs
+                            mt-1
+                        "
+                    ></p>
+
+                </div>
+
+
+                <!-- ASUNTO -->
+
+                <div class="mb-5">
+
+                    <label
+                        for="asunto"
+                        class="
+                            block
+                            text-sm
+                            font-semibold
+                            text-gray-700
+                            mb-2
+                        "
+                    >
+                        Asunto
+                    </label>
+
+                    <input
+                        type="text"
+                        id="asunto"
+                        name="asunto"
+                        placeholder="Asunto del mensaje"
+                        class="
+                            w-full
+                            border
+                            border-gray-300
+                            rounded
+                            px-3
+                            py-2
+                            text-sm
+                            outline-none
+                            focus:ring-2
+                            focus:ring-blue-500
+                            focus:border-blue-500
+                        "
+                    >
+
+                    <p
+                        id="error-asunto"
+                        class="
+                            text-red-500
+                            text-xs
+                            mt-1
+                        "
+                    ></p>
+
+                </div>
+
+
+                <!-- MENSAJE -->
+
+                <div class="mb-5">
+
+                    <label
+                        for="mensaje"
+                        class="
+                            block
+                            text-sm
+                            font-semibold
+                            text-gray-700
+                            mb-2
+                        "
+                    >
+                        Mensaje
+                    </label>
+
+                    <textarea
+                        id="mensaje"
+                        name="mensaje"
+                        rows="5"
+                        placeholder="Escribe tu mensaje..."
+                        class="
+                            w-full
+                            border
+                            border-gray-300
+                            rounded
+                            px-3
+                            py-2
+                            text-sm
+                            outline-none
+                            resize-none
+                            focus:ring-2
+                            focus:ring-blue-500
+                            focus:border-blue-500
+                        "
+                    ></textarea>
+
+                    <p
+                        id="error-mensaje"
+                        class="
+                            text-red-500
+                            text-xs
+                            mt-1
+                        "
+                    ></p>
+
+                </div>
+        
+          
+                <!-- BOTON -->
+
+                <button
+                    type="submit"
+                    class="
+                        bg-blue-600
+                        text-white
+                        text-sm
+                        px-5
+                        py-2
+                        rounded
+                        hover:bg-blue-700
+                        transition
+                    "
+                >
+                    Enviar mensaje
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+<!-- MODAL -->
+
+<div
+    id="modal"
+    class="
+        fixed
+        inset-0
+        bg-black/50
+        hidden
+        items-center
+        justify-center
+        z-50
+        px-4
+    "
+>
+
+    <div
+        class="
+            bg-white
+            rounded-lg
+            shadow-xl
+            w-full
+            max-w-sm
+            p-6
+            text-center
+        "
+    >
+
+        <!-- ICONO -->
+
+        <div
+            id="modal-icono"
+            class="text-4xl mb-4"
+        >
+            ✓
+        </div>
+
+
+        <!-- TITULO -->
+
+        <h2
+            id="modal-titulo"
+            class="
+                text-lg
+                font-bold
+                text-gray-800
+                mb-2
+            "
+        >
+            Mensaje
+        </h2>
+
+
+        <!-- MENSAJE -->
+
+        <p
+            id="modal-mensaje"
+            class="
+                text-sm
+                text-gray-600
+                mb-6
+            "
+        >
+        </p>
+
+
+        <!-- BOTON -->
+
+        <button
+            id="modal-cerrar"
+            type="button"
+            class="
+                bg-green-600
+                text-white
+                text-sm
+                px-5
+                py-2
+                rounded
+                hover:bg-green-700
+                transition
+            "
+        >
+            Cerrar
+        </button>
+
+    </div>
+
+</div>
+
+    <!-- FOOTER -->
+
+  <footer-component></footer-component>
+
+    <script src="components/general.js"></script>
+    <script src="js/contacto.js"></script>
+
+</body>
+
+</html>
