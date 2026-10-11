@@ -1,0 +1,26 @@
+[
+        {
+            "id": 1,
+            "titulo": "Tecnología",
+            "descripcion": "Tecnología",
+            "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNSy1LQByGyOtu6yBQr2x7X1sRqmRFogPVZmEBOX1Gjg&s=10"
+        },
+        {
+            "id": 2,
+            "titulo": "Turismo",
+            "descripcion": "Turismo",
+            "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtugFT_fj01uk1iSFLs5dAVwNl3Hxm2ryJYqXXMTKaJQ&s=10"
+        },
+        {
+            "id": 3,
+            "titulo": "Ciencia",
+            "descripcion": "Ciencia",
+            "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvGJZE6xs1w1IpaCYcLOPP2eRLQfYGd2OohTtzsBXXLA&s=10"
+        },
+        {
+            "id": 4,
+            "titulo": "Inovación",
+            "descripcion": "Inovación",
+            "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ70J7kckb5nwQSuTEp6dM0vtLiVF2A8XbZMosMZgn2BA&s=10"
+        }
+    ]
