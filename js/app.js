@@ -1,266 +1,209 @@
+import {
+    obtenerNoticias
+} from './noticias-storage.js';
+
+import {
+    esFavorito,
+    alternarFavorito
+} from './favoritos-storage.js';
+
+
+// ==========================================
+// CONTENEDOR
+// ==========================================
+
 const contenedorNoticias =
-    document.getElementById('contenedor-noticias');
-
-
-// ==========================================
-// FAVORITOS
-// ==========================================
-
-function obtenerFavoritos() {
-
-    return JSON.parse(
-        localStorage.getItem('favoritos')
-    ) || [];
-
-}
-
-
-function guardarFavoritos(favoritos) {
-
-    localStorage.setItem(
-        'favoritos',
-        JSON.stringify(favoritos)
+    document.getElementById(
+        'contenedor-noticias'
     );
 
-}
-
-
-function alternarFavorito(id, boton) {
-
-    let favoritos = obtenerFavoritos();
-
-
-    if (favoritos.includes(id)) {
-
-        favoritos = favoritos.filter(
-            favoritoId => favoritoId !== id
-        );
-
-        boton.textContent = '☆ Favorito';
-
-        boton.classList.remove(
-            'bg-yellow-500'
-        );
-
-        boton.classList.add(
-            'bg-yellow-400'
-        );
-
-    } else {
-
-        favoritos.push(id);
-
-        boton.textContent = '★ Favorito';
-
-        boton.classList.remove(
-            'bg-yellow-400'
-        );
-
-        boton.classList.add(
-            'bg-yellow-500'
-        );
-
-    }
-
-
-    guardarFavoritos(favoritos);
-
-}
-
 
 // ==========================================
-// CREAR CARD
+// MOSTRAR NOTICIAS
 // ==========================================
 
-function crearTarjeta(noticia) {
+function mostrarNoticias(
+    noticias
+) {
 
-    const tarjeta =
-        document.createElement('article');
-
-
-    tarjeta.className = `
-        bg-white
-        border
-        border-gray-200
-        rounded-md
-        overflow-hidden
-        shadow-sm
-        hover:shadow-md
-        transition
-        flex
-        flex-col
-    `;
+    contenedorNoticias.innerHTML = '';
 
 
-    tarjeta.innerHTML = `
+    if (noticias.length === 0) {
 
-        <!-- IMAGEN -->
-
-        <img
-            src="${noticia.imagen}"
-            alt="${noticia.titulo}"
-            class="w-full h-32 object-cover"
-        >
-
-
-        <!-- CONTENIDO -->
-
-        <div class="p-3 flex flex-col flex-1">
-
-
-            <!-- CATEGORIA -->
-
-            <span
-                class="
-                    inline-block
-                    w-fit
-                    bg-blue-50
-                    text-blue-600
-                    text-[10px]
-                    px-1.5
-                    py-0.5
-                    rounded
-                    mb-2
-                "
-            >
-                [${noticia.categoria}]
-            </span>
-
-
-            <!-- TITULO -->
-
-            <h3
-                class="
-                    text-sm
-                    font-bold
-                    text-gray-800
-                    mb-2
-                "
-            >
-                ${noticia.titulo}
-            </h3>
-
-
-            <!-- DESCRIPCION -->
-
-            <p
-                class="
-                    text-xs
-                    text-gray-500
-                    leading-relaxed
-                    mb-3
-                "
-            >
-                ${noticia.descripcion}
-            </p>
-
-
-            <!-- BOTONES -->
+        contenedorNoticias.innerHTML = `
 
             <div
-                class="flex gap-2 mt-auto"
+                class="col-span-full bg-white rounded-xl shadow-md p-8 text-center"
             >
 
-                <a
-                    href="detalle.html?id=${noticia.id}"
-                    class="
-                        bg-blue-600
-                        text-white
-                        text-xs
-                        px-3
-                        py-1.5
-                        rounded
-                        hover:bg-blue-700
-                        transition
-                    "
-                >
-                    Leer más
-                </a>
-
-
-                <button
-                    type="button"
-                    class="
-                        boton-favorito
-                        text-xs
-                        px-3
-                        py-1.5
-                        rounded
-                        transition
-                    "
-                >
-                </button>
+                <p class="text-gray-600 text-lg">
+                    No hay noticias disponibles.
+                </p>
 
             </div>
 
-        </div>
-    `;
+        `;
+
+        return;
+    }
 
 
-    const botonFavorito =
-        tarjeta.querySelector(
-            '.boton-favorito'
-        );
+    noticias.forEach(
+        noticia => {
+
+            const tarjeta =
+                document.createElement(
+                    'article'
+                );
 
 
-    actualizarBotonFavorito(
-        noticia.id,
-        botonFavorito
-    );
+            tarjeta.className =
+                'bg-white rounded-xl shadow-md overflow-hidden';
 
 
-    botonFavorito.addEventListener(
-        'click',
-        () => {
+            const favorito =
+                esFavorito(
+                    noticia.id
+                );
 
-            alternarFavorito(
-                noticia.id,
-                botonFavorito
+
+            tarjeta.innerHTML = `
+
+                <img
+                    src="${noticia.imagen}"
+                    alt="${noticia.titulo}"
+                    class="w-full h-52 object-cover"
+                >
+
+                <div class="p-6">
+
+                    <h3
+                        class="text-xl font-bold text-gray-800 mb-3"
+                    >
+                        ${noticia.titulo}
+                    </h3>
+
+                    <p
+                        class="text-gray-600 mb-5"
+                    >
+                        ${noticia.descripcion}
+                    </p>
+
+
+                    <div class="flex gap-3 flex-wrap">
+
+                        <a
+                            href="detalle.html?id=${noticia.id}"
+                            class="inline-block bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700"
+                        >
+                            Ver más
+                        </a>
+
+
+                        <button
+                            type="button"
+                            class="
+                                boton-favorito
+                                px-5
+                                py-2
+                                rounded-lg
+                                transition
+                                ${
+                                    favorito
+                                        ? 'bg-yellow-500 text-white hover:bg-yellow-600'
+                                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                }
+                            "
+                        >
+                            ${
+                                favorito
+                                    ? '⭐ Favorito'
+                                    : '☆ Agregar a favoritos'
+                            }
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+
+            // ==================================
+            // BOTÓN FAVORITO
+            // ==================================
+
+            const botonFavorito =
+                tarjeta.querySelector(
+                    '.boton-favorito'
+                );
+
+
+            botonFavorito.addEventListener(
+                'click',
+                () => {
+
+                    const favoritos =
+                        alternarFavorito(
+                            noticia.id
+                        );
+
+
+                    const ahoraEsFavorito =
+                        favoritos.includes(
+                            noticia.id
+                        );
+
+
+                    if (
+                        ahoraEsFavorito
+                    ) {
+
+                        botonFavorito.textContent =
+                            '⭐ Favorito';
+
+                        botonFavorito.className =
+                            `
+                            boton-favorito
+                            px-5
+                            py-2
+                            rounded-lg
+                            transition
+                            bg-yellow-500
+                            text-white
+                            hover:bg-yellow-600
+                            `;
+
+                    } else {
+
+                        botonFavorito.textContent =
+                            '☆ Agregar a favoritos';
+
+                        botonFavorito.className =
+                            `
+                            boton-favorito
+                            px-5
+                            py-2
+                            rounded-lg
+                            transition
+                            bg-gray-200
+                            text-gray-700
+                            hover:bg-gray-300
+                            `;
+
+                    }
+
+                }
+            );
+
+
+            contenedorNoticias.appendChild(
+                tarjeta
             );
 
         }
     );
-
-
-    return tarjeta;
-
-}
-
-
-// ==========================================
-// ACTUALIZAR BOTON
-// ==========================================
-
-function actualizarBotonFavorito(
-    id,
-    boton
-) {
-
-    const favoritos =
-        obtenerFavoritos();
-
-
-    if (favoritos.includes(id)) {
-
-        boton.textContent =
-            '★ Favorito';
-
-        boton.classList.add(
-            'bg-yellow-500',
-            'text-gray-900'
-        );
-
-    } else {
-
-        boton.textContent =
-            '☆ Favorito';
-
-        boton.classList.add(
-            'bg-yellow-400',
-            'text-gray-900'
-        );
-
-    }
 
 }
 
@@ -269,38 +212,19 @@ function actualizarBotonFavorito(
 // CARGAR NOTICIAS
 // ==========================================
 
-fetch('data/noticias.json')
+async function cargarNoticias() {
 
-    .then(response => {
+    try {
 
-        if (!response.ok) {
+        const noticias =
+            await obtenerNoticias();
 
-            throw new Error(
-                'No se pudo cargar noticias.json'
-            );
 
-        }
+        mostrarNoticias(
+            noticias
+        );
 
-        return response.json();
-
-    })
-
-    .then(noticias => {
-
-        noticias.forEach(noticia => {
-
-            const tarjeta =
-                crearTarjeta(noticia);
-
-            contenedorNoticias.appendChild(
-                tarjeta
-            );
-
-        });
-
-    })
-
-    .catch(error => {
+    } catch (error) {
 
         console.error(
             'Error al cargar las noticias:',
@@ -311,20 +235,24 @@ fetch('data/noticias.json')
         contenedorNoticias.innerHTML = `
 
             <div
-                class="
-                    col-span-full
-                    bg-red-50
-                    border
-                    border-red-200
-                    text-red-700
-                    rounded
-                    p-4
-                    text-sm
-                "
+                class="col-span-full bg-red-50 border border-red-200 rounded-xl p-6 text-center"
             >
-                No se pudieron cargar las noticias.
+
+                <p class="text-red-600">
+                    No fue posible cargar las noticias.
+                </p>
+
             </div>
 
         `;
 
-    });
+    }
+
+}
+
+
+// ==========================================
+// INICIAR
+// ==========================================
+
+cargarNoticias();

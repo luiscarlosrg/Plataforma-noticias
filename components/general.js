@@ -26,7 +26,12 @@ class HeaderComponent extends HTMLElement {
                 >
                     Inicio
                 </a>
-
+                <a
+                    href="gestion.html"
+                    class="px-3 py-2 rounded hover:bg-blue-700 transition"
+                >
+                    Noticias
+                </a>
                 <a
                     href="categorias.html"
                     class="px-3 py-2 rounded hover:bg-blue-700 transition"

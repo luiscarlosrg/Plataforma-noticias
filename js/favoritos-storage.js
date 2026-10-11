@@ -1,3 +1,6 @@
+// ==========================================
+// OBTENER FAVORITOS
+// ==========================================
 
 export function obtenerFavoritos() {
 
@@ -8,7 +11,13 @@ export function obtenerFavoritos() {
 }
 
 
-export function guardarFavoritos(favoritos) {
+// ==========================================
+// GUARDAR FAVORITOS
+// ==========================================
+
+export function guardarFavoritos(
+    favoritos
+) {
 
     localStorage.setItem(
         'favoritos',
@@ -18,15 +27,39 @@ export function guardarFavoritos(favoritos) {
 }
 
 
+// ==========================================
+// COMPROBAR SI ES FAVORITO
+// ==========================================
+
+export function esFavorito(id) {
+
+    const favoritos =
+        obtenerFavoritos();
+
+    return favoritos.includes(id);
+
+}
+
+
+// ==========================================
+// ALTERNAR FAVORITO
+// ==========================================
+
 export function alternarFavorito(id) {
 
-    let favoritos = obtenerFavoritos();
+    let favoritos =
+        obtenerFavoritos();
 
-    if (favoritos.includes(id)) {
 
-        favoritos = favoritos.filter(
-            favoritoId => favoritoId !== id
-        );
+    if (
+        favoritos.includes(id)
+    ) {
+
+        favoritos =
+            favoritos.filter(
+                favoritoId =>
+                    favoritoId !== id
+            );
 
     } else {
 
@@ -34,15 +67,11 @@ export function alternarFavorito(id) {
 
     }
 
-    guardarFavoritos(favoritos);
+
+    guardarFavoritos(
+        favoritos
+    );
+
 
     return favoritos;
-
-}
-
-
-export function esFavorito(id) {
-
-    return obtenerFavoritos().includes(id);
-
 }
