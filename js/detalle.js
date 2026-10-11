@@ -1,24 +1,64 @@
-const contenedorDetalle = document.getElementById('detalle-noticia');
-
-const parametros = new URLSearchParams(window.location.search);
-
-const id = Number(parametros.get('id'));
-
-console.log('ID recibido:', id);
+import {
+    obtenerNoticias
+} from './noticias-storage.js';
 
 
-fetch('data/noticias.json')
-    .then(response => response.json())
-    .then(noticias => {
+// ==========================================
+// CONTENEDOR
+// ==========================================
 
-        const noticia = noticias.find(noticia => noticia.id === id);
+const contenedorDetalle =
+    document.getElementById(
+        'detalle-noticia'
+    );
+
+
+// ==========================================
+// OBTENER ID DE LA URL
+// ==========================================
+
+const parametros =
+    new URLSearchParams(
+        window.location.search
+    );
+
+const id =
+    Number(
+        parametros.get('id')
+    );
+
+
+// ==========================================
+// CARGAR NOTICIA
+// ==========================================
+
+async function cargarNoticia() {
+
+    try {
+
+        const noticias =
+            await obtenerNoticias();
+
+
+        const noticia =
+            noticias.find(
+                noticia => noticia.id === id
+            );
+
+
+        // ==================================
+        // NOTICIA NO ENCONTRADA
+        // ==================================
 
         if (!noticia) {
 
             contenedorDetalle.innerHTML = `
+
                 <div class="p-8 text-center">
 
-                    <h1 class="text-3xl font-bold text-gray-800 mb-4">
+                    <h1
+                        class="text-3xl font-bold text-gray-800 mb-4"
+                    >
                         Noticia no encontrada
                     </h1>
 
@@ -30,11 +70,16 @@ fetch('data/noticias.json')
                     </a>
 
                 </div>
+
             `;
 
             return;
         }
 
+
+        // ==================================
+        // MOSTRAR NOTICIA
+        // ==================================
 
         contenedorDetalle.innerHTML = `
 
@@ -46,11 +91,15 @@ fetch('data/noticias.json')
 
             <div class="p-8">
 
-                <h1 class="text-4xl font-bold text-gray-800 mb-6">
+                <h1
+                    class="text-4xl font-bold text-gray-800 mb-6"
+                >
                     ${noticia.titulo}
                 </h1>
 
-                <p class="text-lg text-gray-600 leading-relaxed">
+                <p
+                    class="text-lg text-gray-600 leading-relaxed"
+                >
                     ${noticia.descripcion}
                 </p>
 
@@ -58,12 +107,19 @@ fetch('data/noticias.json')
 
         `;
 
-    })
-    .catch(error => {
+    } catch (error) {
 
         console.error(
             'Error al cargar la noticia:',
             error
         );
 
-    });
+    }
+}
+
+
+// ==========================================
+// INICIAR
+// ==========================================
+
+cargarNoticia();
