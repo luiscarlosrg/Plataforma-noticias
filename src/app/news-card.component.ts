@@ -26,6 +26,9 @@ import { NewsService } from './news.service';
           @if (allowRemove) {
             <button type="button" (click)="favoriteToggled.emit(noticia.id)" class="bg-red-500 text-white px-5 py-2 rounded-lg hover:bg-red-600 transition">Quitar favorito</button>
           }
+          @if (allowDelete) {
+            <button type="button" (click)="deleteRequested.emit(noticia.id)" class="bg-red-500 text-white px-5 py-2 rounded-lg hover:bg-red-600 transition">Eliminar</button>
+          }
         </div>
       </div>
     </article>
@@ -35,7 +38,9 @@ export class NewsCardComponent {
   @Input({ required: true }) noticia!: Noticia;
   @Input() showFavoriteAction = true;
   @Input() allowRemove = false;
+  @Input() allowDelete = false;
   @Output() favoriteToggled = new EventEmitter<number>();
+  @Output() deleteRequested = new EventEmitter<number>();
 
   private readonly newsService = inject(NewsService);
   favorite = false;

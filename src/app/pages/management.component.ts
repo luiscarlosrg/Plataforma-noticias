@@ -60,10 +60,7 @@ import { NewsService } from '../news.service';
         } @else {
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @for (item of news; track item.id) {
-              <div class="flex flex-col gap-3">
-                <app-news-card [noticia]="item" [showFavoriteAction]="false" />
-                <button type="button" (click)="deleteNews(item.id)" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition self-start">Eliminar</button>
-              </div>
+              <app-news-card [noticia]="item" [showFavoriteAction]="false" [allowDelete]="true" (deleteRequested)="deleteNews($event)" />
             }
           </div>
         }
