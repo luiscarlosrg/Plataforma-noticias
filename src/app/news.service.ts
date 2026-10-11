@@ -14,14 +14,14 @@ export class NewsService {
     }
 
     const news = await firstValueFrom(
-      this.http.get<Noticia[]>('/data/noticias.json'),
+      this.http.get<Noticia[]>('data/noticias.json'),
     );
     localStorage.setItem('noticias', JSON.stringify(news));
     return news;
   }
 
   async getCategories(): Promise<Categoria[]> {
-    return firstValueFrom(this.http.get<Categoria[]>('/data/categorias.json'));
+    return firstValueFrom(this.http.get<Categoria[]>('data/categorias.json'));
   }
 
   async createNews(input: Omit<Noticia, 'id'>): Promise<Noticia[]> {
